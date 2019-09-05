@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "serve": "npm run proto && vue-cli-service serve",
+    "build": "npm run proto && vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "ex-proto": "mkdir -p example/proto && touch example/proto/proto.js && pbjs -t json-module -w commonjs -o example/proto/proto.js  example/proto/*.proto"
+    "proto": "mkdir -p example/proto && touch example/proto/proto.js && pbjs -t json-module -w default -o example/proto/proto.js  example/proto/*.proto"
   },
   "dependencies": {
     "core-js": "^2.6.5",
