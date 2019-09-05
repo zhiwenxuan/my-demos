@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option java_package = "com.bees360.internal.ai.exchange.ai2client";
+
+package api.ai2client;
+
+message PipelineList {
+    repeated Pipeline pipelines = 1;
+}
+
+message Pipeline {
+    int64 id = 1;
+    int64 project_id = 2;
+    string stage = 3;
+    int64 trigger = 4;
+    int64 created_at = 5;
+    int64 finished_at = 6;
+    int64 status = 7;
+    int64 msg = 8;
+}

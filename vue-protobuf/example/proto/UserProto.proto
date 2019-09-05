@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "com.bees360.internal.ai.exchange.aiweb";
+
+package exchange.aiweb;
+
+message UserVo {
+    string first_name = 1;
+    string last_name = 2;
+    string email = 3;
+}

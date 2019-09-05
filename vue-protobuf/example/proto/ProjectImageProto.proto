@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option java_package = "com.bees360.internal.ai.exchange.ai2client";
+
+package api.ai2client;
+
+message ProjectImageList {
+    repeated ProjectImageItem images = 1;
+}
+
+message ProjectImageItem {
+    int64 image_id = 1;
+    int64 project_id = 2;
+    // 原图路径
+    string file_name = 3;
+    // 中途路径
+    string file_name_middle_resolution = 4;
+    // 小图路径
+    string file_name_lower_resolution = 5;
+    // 图片原始名称
+    string original_file_name = 6;
+}

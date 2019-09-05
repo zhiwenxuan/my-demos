@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+option java_package = "com.bees360.internal.ai.exchange.ai2client";
+
+package api.ai2client;
+
+message DataProcessStage {
+    int64 project_id = 1;
+    DataProcessStageItem modeling = 2;
+    DataProcessStageItem ranging = 3;
+    DataProcessStageItem scoping = 4;
+    DataProcessStageItem plane = 5;
+    DataProcessStageItem boundary = 6;
+    DataProcessStageItem confirm = 7;
+    string latest_ai_stage_status = 8;
+}
+
+message DataProcessStageItem {
+    // 通过该请求，可以获取该阶段的数据
+    string stage_name = 1;
+    string data_url = 2;
+    repeated int32 selected_indexes = 3;
+    int64 created_at = 4;
+    int64 updated_at = 5;
+    int64 updated_by = 6;
+    string status = 7;
+    string msg = 8;
+    bool is_next = 9;
+}
+
+message SelectedIndexes {
+    repeated int32 indexes = 1;
+}
+
+message ModelingParams {
+    int32 image_size = 1;
+    int32 pmvs_level = 2;
+    int32 pmvsw_size = 3;
+    double pmvs_threshold = 4;
+    int32 pmvs_max_angle = 5;
+    double pmvs_quad = 6;
+}
+
+message DataProcessStageConfirm {
+    bool is_success = 1;
+    // 如果不是成功的，则需要提供理由
+    string reason = 2;
+}

@@ -1,0 +1,29 @@
+syntax="proto3";
+
+option java_package = "com.bees360.internal.ai.exchange.ai2client";
+
+package api.ai2client;
+
+message ResponseBody {
+    int32 code = 1;
+    string message = 2;
+    Data data = 3;
+
+    message Data {
+        string type = 1;
+        bytes value = 2;
+    }
+}
+
+message ValidError {
+    ValidErrorType type = 1;
+    string field = 2;
+    string message = 3;
+
+    enum ValidErrorType {
+        UNRECOGNIZED_TYPE = 0;
+        MISSING_FIELD = 1;
+        INVALID = 2;
+        TYPE_MISMATCH = 3;
+    }
+}

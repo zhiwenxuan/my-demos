@@ -6,7 +6,6 @@ const protoRoot = require('./proto/proto.js')
 var AwesomeMessage = protoRoot.lookupType("api.ai2client.SelectedIndexes");
 
 // Exemplary payload
-// var payload = { awesomeField: "AwesomeString111", num: 2 };
 var payload = { indexes: [1, 2, 3, 4] };
 
 // Verify the payload if necessary (i.e. when possibly incomplete or invalid)
