@@ -32,6 +32,7 @@ const decodeBufferToObject = function (buffer, messageType) {
   var object = AwesomeMessage.toObject(message1, {
     longs: Number, // 类型转换，重要 @TODO
     enums: String,
+    defaults: true // 保留默认值
     // bytes: String,
     // see ConversionOptions
   });
