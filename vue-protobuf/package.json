@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "core-js": "^2.6.5",
-    "protobufjs": "^6.8.8",
+    "protobufjs": "^6.11.3",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3"
   },
